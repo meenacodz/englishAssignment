@@ -1,0 +1,658 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.parent{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(ellipse at 10% 15%, rgba(0,255,255,.4), transparent 35%), radial-gradient(ellipse at 90% 20%, rgba(255,0,170,.35), transparent 35%), radial-gradient(ellipse at 60% 90%, rgba(112,0,255,.4), transparent 40%), #090910;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.side{
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.ppt-container {
+    display: flex;
+    width: 20vw;
+    height: 20vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform-origin: center center;
+    transition: .5s ease;
+    backdrop-filter: blur(2px);
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.ppt-container.active1{
+    transform: translate(var(--x),var(--y)) scale(1);
+    z-index: 9;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.ppt-container.active2{
+    transform: translate(var(--x), var(--y)) scale(var(--sx), var(--sy));
+    /* height: 100vh;
+    width: 100vw; */
+}
+
+.menu-btn{
+    display: flex;
+    position: fixed;
+    bottom: 5px;
+    width: 5vw;
+    aspect-ratio: 1/1;
+    z-index: 10;
+    font-size: 3vw;
+    backdrop-filter: blur(2px);
+    /* border: 2px solid black; */
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+}
+
+#pptc1{
+    background-image: url("https://res.cloudinary.com/devpcp7mz/image/upload/v1793000865/intro_nx2ta3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.left .ppt-container.animate{
+    animation: leftAni .3s forwards ease-in;
+}
+
+
+@keyframes leftAni{
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+}
+
+.right .ppt-container.animate{
+    animation: rightAni .3s forwards ease-in;
+}
+
+@keyframes rightAni{
+    0%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+.left .ppt-container.backIn{
+    animation: leftAniAni .3s forwards ease-out;
+    opacity: 0;
+}
+
+@keyframes leftAniAni{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.right .ppt-container.backIn{
+    animation: rightAniAni .3s forwards ease-out;
+    opacity: 0;
+}
+
+@keyframes rightAniAni {
+    0%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.left .ppt-container:nth-child(1){
+    animation-delay: 0s;
+}
+.left .ppt-container:nth-child(2){
+    animation-delay: .05s;
+}
+.left .ppt-container:nth-child(3){
+    animation-delay: .1s;
+}
+.left .ppt-container:nth-child(4){
+    animation-delay: .15s;
+}
+
+
+.right .ppt-container:nth-child(1){
+    animation-delay: 0s;
+}
+.right .ppt-container:nth-child(2){
+    animation-delay: .05s;
+}
+.right .ppt-container:nth-child(3){
+    animation-delay: .1s;
+}
+.right .ppt-container:nth-child(4){
+    animation-delay: .15s;
+}
+
+.parent{
+    display: flex;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("https://res.cloudinary.com/devpcp7mz/image/upload/v1793000854/bg_ffqhtm.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.send-btn{
+    display: flex;
+    width: 4vw;
+    font-size: 2.5vw;
+    color: white;
+    aspect-ratio: 1/1;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn:nth-child(2){
+    right: 5px;
+    left: auto;
+    transform: rotateY(180deg);
+}
+
+.screen{
+    display: flex;
+    width: 30vw;
+    height: 95vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(255 255 255 / 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    overflow: hidden;
+    flex-direction: column;
+    background-image: url("https://res.cloudinary.com/devpcp7mz/image/upload/v1793000859/chatbg_fh21a3.png");
+    background-repeat: repeat;
+}
+
+.topbar{
+    display: flex;
+    height: 10vh;
+    width: 30vw;
+    background-color: white;
+    align-items: center;
+}
+
+.backbtn{
+    display: flex;
+    width: 4vw;
+    height: 4vw;
+    background-color: transparent;
+    font-size: 4vw;
+}
+
+.topbar .dp{
+    display: flex;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 2px solid rgb(5, 196, 15);
+    margin-left: 5px;
+    background-image: url("https://res.cloudinary.com/devpcp7mz/image/upload/v1793000859/dp_j09hhz.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topbar .name{
+    display: flex;
+    font-size: .9rem;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: light;
+}
+
+.topbar .threedots{
+    display: flex;
+    width: 3.5vw;
+    height: 3.5vw;
+    font-size: 3.5vw;
+    position: absolute;
+    right: 2px;
+}
+
+.mainbody::-webkit-scrollbar {
+    display: none;
+}
+
+.screen .mainbody{
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    width: 100%;
+    color: black;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.wrp{
+    display: flex;
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    flex: 0 0 auto;
+
+    animation: msgEnter 0.25s ease-out both;
+    transform-origin: bottom;
+    min-width: 0;
+}
+
+.wrp.rec{
+    justify-content: flex-start;
+
+    animation: msgFromLeft 0.25s ease-out both;
+}
+
+.wrp.sen{
+    justify-content: flex-end;
+
+    animation: msgFromRight 0.25s ease-out both;
+}
+
+
+@keyframes msgFromLeft {
+    from {
+        opacity: 0;
+        transform: translate(-12px, 8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes msgFromRight {
+    from {
+        opacity: 0;
+        transform: translate(12px, 8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes msgEnter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.msgs{
+    border-radius: 7px;
+    /* padding: 5px 7px; */
+    /* margin: 2px 5px; */
+}
+
+
+.msgs {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+
+    width: fit-content;
+    max-width: 75%;
+    min-width: 0;
+
+    padding: 8px 10px;
+    margin: 3px 8px;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    line-height: 1;
+}
+
+
+.msgs.sending{
+    background-color: #D9FDD3;
+}
+.msgs.recieving{
+    background-color: white;
+}
+
+
+.footer{
+    display: flex;
+    width: 30vw;
+    height: 7vh;
+    bottom: 10px;
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.footer .typebar{
+    display: flex;
+    width: 24vw;
+    height: 6vh;
+    border-radius: 18px;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    font-size: 0.9rem;
+    padding-left: 10px;
+    /* padding-right: 5px; */
+    margin-left: 3px;
+}
+
+.footer .typebar .btn-cont{
+    display: flex;
+    height: 6vh;
+    align-items: center;
+    position: absolute;
+    right: 5vw;
+}
+
+.footer .typebar .btn-cont .att, .pay, .camera{
+    display: flex;
+    height: 3vh;
+    width: 3vh;
+    font-size: 2.5vh;
+    margin-left: 10px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .typebar .btn-cont .pay{
+    border: 1px solid black;
+}
+
+.footer .voice-rec{
+    display: flex;
+    /* width: 4vw; */
+    width: clamp(42px, 3.5vw, 54px);
+    /* height: 4vw; */
+    height: clamp(42px, 3.5vw, 54px);
+    background-color: rgb(5, 196, 15);
+    border-radius: 50%;
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    color: white;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reference design: 1024 × 768 */
+
+
+/* ===== CLASSROOM DISPLAY OPTIMIZATION ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Keep chat proportional to the available viewport */
+.screen {
+    width: 30vw;
+    height: 95vh;
+    height: 95dvh;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Readable contact header */
+.topbar {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.topbar .backbtn {
+    width: clamp(32px, 4vw, 64px);
+    height: clamp(32px, 4vw, 64px);
+    font-size: clamp(24px, 2.5vw, 40px);
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbar .dp {
+    width: clamp(38px, 3.5vw, 58px);
+    height: clamp(38px, 3.5vw, 58px);
+    flex-shrink: 0;
+}
+
+.topbar .name {
+    font-size: clamp(16px, 1.25vw, 32px);
+    min-width: 0;
+}
+
+.topbar .threedots {
+    width: clamp(32px, 3vw, 48px);
+    height: clamp(36px, 3vw, 48px);
+    font-size: clamp(24px, 2.5vw, 40px);
+    flex-shrink: 0;
+}
+
+/* Messages readable from a distance */
+.wrp {
+    font-size: clamp(16px, 1.25vw, 32px);
+}
+
+.msgs {
+    max-width: 85%;
+    padding: clamp(8px, 0.65vw, 18px)
+             clamp(10px, 0.8vw, 22px);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+/* Footer must stay inside the chat */
+.footer {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    align-items: center;
+    gap: clamp(4px, 0.4vw, 10px);
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.footer .typebar {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    height: clamp(44px, 6vh, 76px);
+    margin: 0;
+    padding: 0 clamp(8px, 0.7vw, 18px);
+    font-size: clamp(14px, 1vw, 26px);
+}
+
+.footer .typebar .btn-cont {
+    position: static;
+    height: 100%;
+    margin-left: auto;
+    gap: clamp(4px, 0.5vw, 12px);
+    flex-shrink: 0;
+}
+
+.footer .typebar .btn-cont .att,
+.footer .typebar .btn-cont .pay,
+.footer .typebar .btn-cont .camera {
+    width: clamp(20px, 2vw, 36px);
+    height: clamp(20px, 2vw, 36px);
+    margin: 0;
+    flex-shrink: 0;
+    font-size: clamp(16px, 1.5vw, 30px);
+}
+
+.footer .voice-rec {
+    width: clamp(42px, 3.5vw, 64px);
+    height: clamp(42px, 3.5vw, 64px);
+    flex: 0 0 clamp(42px, 3.5vw, 64px);
+    margin: 0;
+    font-size: clamp(22px, 2vw, 36px);
+    box-sizing: border-box;
+}
+
+/* Keep the chat centered */
+.container {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+/* Initial state */
+.container {
+    display: none;
+}
+
+.screen {
+    opacity: 0;
+}
+
+/* Chat screen */
+.screen.show-screen {
+    animation: screenIn .5s ease forwards;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Chat elements */
+.topbar,
+.mainbody,
+.footer {
+    opacity: 0;
+}
+
+.show-chat {
+    animation: chatIn .5s ease forwards;
+}
+
+@keyframes chatIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* WhatsApp UI exit animation */
+.screen.hide-screen {
+    animation: screenOut .5s ease forwards;
+}
+
+@keyframes screenOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(.9);
+    }
+}
