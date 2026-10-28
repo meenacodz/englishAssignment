@@ -4,15 +4,15 @@
 /* -------------------- PRELOAD IMAGES -------------------- */
 
 const images = [
-    "https://res.cloudinary.com/devpcp7mz/image/upload/v1793000854/bg_ffqhtm.jpg",
-    "https://res.cloudinary.com/devpcp7mz/image/upload/v1793000859/chatbg_fh21a3.png",
-    "https://res.cloudinary.com/devpcp7mz/image/upload/v1793000859/dp_j09hhz.png",
-    "https://res.cloudinary.com/devpcp7mz/image/upload/v1793000865/intro_nx2ta3.png"
+    "bg.jpg",
+    "chatbg.png",
+    "dp.png",
+    "intro.png"
 ];
-const preloadedImages = images.map(src => {
+
+images.forEach(src => {
     const img = new Image();
     img.src = src;
-    return img;
 });
 
 
@@ -170,62 +170,30 @@ backBtn.addEventListener("click", () => {
 
 /* -------------------- CHAT MESSAGES -------------------- */
 
-let person1 = [
-    "Hiiii!",
-    "Kya kar rahe ho?",
-    "Kuch nahi, bas free hoon.",
-    "Achha 😂",
-    "Kal school aa rahe ho na?",
-    "Haan, obviously!",
-    "English project complete hua?",
-    "Almost complete hai, bas thoda sa kaam baaki hai.",
-    "Bro, mera toh abhi aadha bhi nahi hua 😭",
-    "Toh jaldi kar le 😂",
-    "Waise kal presentation bhi hai na?",
-    "Haan, aur mujhe stage par bolna hai.",
-    "Tension ho rahi hai kya?",
-    "Thodi si, honestly.",
-    "Chill kar, achhe se ho jayega.",
-    "Thanks bro ❤️",
-    "Achha, school kitne baje pahuchna hai?",
-    "Main toh 7:30 tak aa jaunga.",
-    "Theek hai, milte hain kal!",
-    "Done 🤝",
-    "Aur haan, project ki file mat bhoolna 😂",
-    "Arey haan, yaad dilane ke liye thanks!",
-    "Ab jaa kar complete kar apna project.",
-    "Okay sir 🫡",
-    "Bye bro, kal milte hain!",
-    "Byeeee 👋"
+const person1 = [
+    "BROOOOO 😭 have you seen the school cat's new photo??",
+    "It's sitting outside the principal's office 😭 caption says ‘POV: HR called him for an interview.’",
+    "Ngl bro has more career opportunities than us 💀",
+    "Imagine his LinkedIn profile 💀 ‘Experienced in sleeping 16 hours a day.’",
+    "BRO REALLY SAID corporate ladder 🗣️💀",
+    "Highkey he'd fire us both. We're never beating the unemployed allegations 💀",
+    "It's giving employee of the month 😭",
+    "WAIT. I have actual news. 😭",
+    "School group says he's officially our attendance monitor 😭",
+    "Anyway, kal school aa raha hai na? 😭",
+    "💀💀💀 THE CAT IS TAKING YOUR ATTENDANCE."
 ];
-
-let person2 = [
-    "Heyyy!",
-    "Bas tumse baat kar raha hoon 😎",
-    "Achha ji 😂",
-    "Haan, kyun?",
-    "Haan haan, aaunga.",
-    "Tumhara hua kya?",
-    "Haan, mera toh ho gaya!",
-    "Wah bhai, topper 😂",
-    "Koi nahi, ho jayega tera bhi.",
-    "Bas yahi motivation chahiye thi 😭",
-    "Haan, kal toh full busy day hai.",
-    "Same yaar, thoda nervous hoon.",
-    "Nahi, bas preparation kar raha hoon.",
-    "Phir toh tension lene ki zarurat hi nahi.",
-    "Welcome bro 😎",
-    "Waise tum bhi achha karoge.",
-    "Perfect, main bhi tab tak aa jaunga.",
-    "Okay, saath mein class chalte hain.",
-    "Bilkul 🤝",
-    "Haha, pakka nahi bhoolunga!",
-    "Tu bhi apna charger le aana 😂",
-    "Haan bhai, sab ready hai!",
-    "Order received, boss 🫡",
-    "Chal, good night!",
-    "Good night bro ❤️",
-    "See you tomorrow!"
+const person2 = [
+    "Nah 💀 what did bro do now?",
+    "NAHHH 😭 bro is NOT getting paid in Whiskas 💀",
+    "FR 😭 hum abhi bhi homework ke unpaid interns hain.",
+    "Skills: meow-nagement, nap-titude, purr-suasive communication 😭😭",
+    "Lowkey he'd be our manager. ‘Why were you absent yesterday?’ 😭",
+    "Wait 💀 someone commented ‘promote him to attendance monitor.’",
+    "Bro's gonna take attendance with a MEOWcrosoft Excel sheet 💀",
+    "What now bro 💀 don't tell me he's become principal.",
+    "NO WAY 💀 bro got promoted before GTA 6.",
+    "Bro I'm literally absent tomorrow. 💀"
 ];
 
 let p1 = 0;
@@ -234,7 +202,6 @@ let p2 = 0;
 const mainBody = document.querySelector(".mainbody");
 const sendBtn1 = document.getElementById("send-btn1");
 const sendBtn2 = document.getElementById("send-btn2");
-
 
 function sendMessage(message, sender) {
 
@@ -254,6 +221,9 @@ function sendMessage(message, sender) {
     mainBody.appendChild(wrapper);
 
     mainBody.scrollTop = mainBody.scrollHeight;
+
+
+
 }
 
 
@@ -273,3 +243,29 @@ sendBtn2.addEventListener("click", () => {
     }
 
 });
+
+
+
+
+
+const dpBtn = document.querySelector(".topbar .dp");
+const status_ = document.querySelector(".status")
+const topbar = document.querySelector(".screen .topbar");
+const footer = document.querySelector(".screen .footer");
+let btnPress = 0;
+
+
+
+dpBtn.addEventListener("click",()=>{
+        status_.classList.remove("non-active");
+        status_.classList.add("active");
+        dpBtn.style.borderColor = "black";
+});
+
+status_.addEventListener("click",()=>{
+    status_.classList.remove("active");
+    status_.classList.add("non-active");
+    setTimeout(()=>{
+        status_.classList.remove("non-active");
+    },600)
+})
