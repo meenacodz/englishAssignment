@@ -241,6 +241,7 @@ html,body{
     height: 3vw;
     border-radius: 50%;
     border: 2px solid rgb(5, 196, 15);
+    /* border: 2px solid rgba(157, 160, 158, 0.555); */
     margin-left: 5px;
     background-image: url("https://res.cloudinary.com/devpcp7mz/image/upload/v1793000859/dp_j09hhz.png");
     background-position: center;
@@ -439,15 +440,58 @@ html,body{
     box-sizing: border-box;
 }
 
+.status.active{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: aqua;
+    position: fixed;
+    animation: zoomin .5s ease forwards;
+    opacity: 0;
+    transform: scale(0);
+}
+.status.non-active{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: aqua;
+    position: fixed;
+    animation: zoomout .5s ease forwards;
+    opacity: 1;
+    transform: scale(1);
+}
 
+@keyframes zoomin {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    30%{
+        opacity: 1;
+        transform: scale(0.3);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-
-
-
-
-
-
-
+@keyframes zoomout {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    70%{
+        opacity: 1;
+        transform: scale(0.7);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
 
 
 
