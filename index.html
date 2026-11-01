@@ -6,34 +6,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Assignment</title>
     <!-- Basic Icons -->
-<link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
-<!-- Filled Icons -->
-<link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
-<!-- Brand Icons -->
-<link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <!-- Filled Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+    <!-- Brand Icons -->
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
+        <div class="player" id="page1"></div>
+        <div class="player" id="page2"></div>
+        <div class="player" id="page3"></div>
+        <div class="player" id="page4"></div>
+        <div class="player" id="page5"></div>
+        <div class="player" id="page6"></div>
+        <div class="player" id="page7"></div>
+        <div class="player" id="page8"></div>
+        <div class="player" id="page9"></div>
 
-    <div class="player" id="page1">Page 1</div>
-    <div class="player" id="page2">Page 2</div>
-    <div class="player" id="page3">Page 3</div>
-    <div class="player" id="page4">Page 4</div>
-    <div class="player" id="page5">Page 5</div>
-    <div class="player" id="page6">Page 6</div>
-    <div class="player" id="page7">Page 7</div>
-    <div class="player" id="page8">Page 8</div>
+        <div class="controls">
+            <button class="btns" id="prevBtn"><i class="bx bx-arrow-to-left"></i></button>
+            <button class="btns" id="nextBtn"><i class="bx bx-arrow-to-right"></i></button>
+            <button class="btns" id="revisitBtn"><i class="bx bx-message-circle-dots" /></button>
+        </div>
 
-    <div class="controls">
-        <button class="btns" id="prevBtn"><i class="bx bx-arrow-to-left" ></i></button>
-        <button class="btns" id="nextBtn"><i class="bx bx-arrow-to-right"></i></button>
     </div>
 
-</div>
+    <div class="container-lst">
+        <div class="abb-cont">
+            <h1 class="abb" id="abb1">POV : Point of View</h1>
+            <h1 class="abb" id="abb2">Whiskas : Popular Cat Food Brand</h1>
+            <h1 class="abb" id="abb3">NGL : Not Gonna Lie</h1>
+            <h1 class="abb" id="abb4">FR : For Real</h1>
+            <h1 class="abb" id="abb5">Lowkey : Secretly</h1>
+            <h1 class="abb" id="abb6">Highkey : Openly</h1>
+        </div>
+        <div class="zx10r">
+            <div class="screen">
+                <div class="status">
+                    <video id="statusVideo" playsinline>
+                        <source src="1101.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="topbar">
+                    <div class="backbtn"><i class="bx bx-arrow-left"></i></div>
+                    <div class="dp"></div>
+                    <h1 class="name">Nalanda University</h1>
+                    <div class="threedots"><i class="bx bx-dots-vertical-rounded"></i></div>
+                </div>
+                <div class="mainbody">
+                </div>
+                <div class="footer">
+                    <div class="typebar">
+                        <p>Message</p>
+                        <div class="btn-cont">
+                            <div class="att"><i class="bx bx-paperclip"></i></div>
+                            <div class="pay"><i class="bx bx-rupee"></i></div>
+                            <div class="camera"><i class="bx bx-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="voice-rec"><i class="bx bx-microphone"></i></div>
+                </div>
+            </div>
+            <div class="send-btn" id="send-btn1"><i class="bx bx-send"></i></div>
+            <div class="send-btn" id="send-btn2"><i class="bx bx-send"></i></div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
+
+    <!-- ENDING BUTTON -->
+    <div class="ending-prompt" id="endingPrompt">
+
+        <button id="endBtn">
+            LET US END
+            <i class="bx bx-right-arrow-alt"></i>
+        </button>
+
+    </div>
+
+
+    <!-- FINAL CREDITS SCREEN -->
+    <div class="credits-screen" id="creditsScreen">
+
+        <div class="credits-wrapper">
+
+            <div class="credits-header">
+                <span class="credits-label">THE PEOPLE BEHIND IT</span>
+                <h1>PROJECT CREDITS</h1>
+                <p>CREATIVITY. CODE. COLLABORATION.</p>
+            </div>
+
+
+            <!-- MENTOR -->
+            <div class="mentor-section">
+
+                <span>PROJECT MENTOR &amp; ACADEMIC GUIDE</span>
+
+                <p>UNDER THE ESTEEMED GUIDANCE OF</p>
+
+                <h2>Ms. Anushka Sharma</h2>
+
+                <div class="mentor-line"></div>
+
+            </div>
+
+
+            <!-- DEVELOPERS -->
+            <div class="credits-grid">
+
+                <div class="credit-item">
+                    <span>CHIEF SOFTWARE DEVELOPER</span>
+                    <h2>Divyansh Meena</h2>
+                </div>
+
+                <div class="credit-item">
+                    <span>CHIEF SCRIPTWRITER</span>
+                    <h2>Anikesh Dhakad</h2>
+                </div>
+
+            </div>
+
+
+            <!-- TEAM -->
+            <div class="coordination-section">
+
+                <span>PROJECT COORDINATION TEAM</span>
+
+                <div class="team-names">
+                    <h3>Ashwin Rao Salunke</h3>
+                    <h3>Mithun Lodha</h3>
+                    <h3>Abhishek Shivhare</h3>
+                    <h3>Manav Shrivastava</h3>
+                </div>
+
+            </div>
+
+
+            <footer class="credits-footer">
+                A PRESENTATION BY CLASS 10th D
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
