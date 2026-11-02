@@ -115,19 +115,23 @@ body {
 }
 
 .controls .btns{
+    width: 55px;
+    height: 55px;
+
     display: flex;
-    width: 5vw;
-    height: 5vw;
-    background-color: rgb(1, 74, 87);
-    outline: none;
-    border: 2px solid white;
-    font-size: 4vw;
-    border-radius: 50%;
-    margin: 0 3px;
-    justify-content: center;
     align-items: center;
-    color: white;
-    transition: .5s ease;
+    justify-content: center;
+
+    border: 1px solid cyan;
+    border-radius: 15px;
+
+    background: rgba(0, 255, 255, 0.08);
+    color: cyan;
+
+    font-size: 28px;
+
+    backdrop-filter: blur(12px);
+    cursor: pointer;
 }
 
 .controls .btns:nth-child(1){
